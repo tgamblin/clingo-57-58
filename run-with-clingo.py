@@ -31,11 +31,4 @@ for lp in [
 
 control.ground([("base", [])])
 
-with control.solve(async_=True) as handle:
-    finished = handle.wait(1)
-    if not finished:
-        handle.cancel()
-
-    solve_result = handle.get()
-
-print(solve_result)
+print(control.solve())
